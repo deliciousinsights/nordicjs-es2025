@@ -1,65 +1,68 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8">
+  <head>
+    <meta charset="utf-8" />
 
-		<title>So, what’s new in ES2022? • Christophe Porteneuve @ Confoo Montréal 2020</title>
+    <title>So, what’s new in ES2025? • Christophe Porteneuve @ Nordic.js 2022</title>
 
-		<meta name="description" content="Yes, okay, ES2015 rules, and ES2017/2018 bring about a lot of cool things (most notably async/await), but a ton of cool stuff is expected to land in the next few years, too… and we can play with it already! Christophe takes you through a whirlwind tour of the upcoming features he’s most excited about, due to become official in 2020, 2021… or 2022 ;-)">
-		<meta name="author" content="Christophe Porteneuve">
+    <meta
+      name="description"
+      content="Yes, okay, ES2022 rules, and ES2015–2019 brought about a lot of cool things, but a ton of cool stuff is expected to land in the next few years, too… and we can play with it already! Christophe takes you through a whirlwind tour of the upcoming features he’s most excited about, due to become official in 2023, 2024… or 2025 ;-)"
+    />
+    <meta name="author" content="Christophe Porteneuve" />
 
-		<meta name="apple-mobile-web-app-capable" content="yes" />
-		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 
-    <link href='css/fonts.css' rel='stylesheet' type='text/css'>
-		<link rel="stylesheet" href="css/reveal.css">
-		<link rel="stylesheet" href="css/animate.min.css">
-		<link rel="stylesheet" href="css/theme/sky.css" id="theme-basis">
-		<link rel="stylesheet" href="css/theme/pw15.css" id="theme">
+    <link href="css/fonts.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="css/reveal.css" />
+    <link rel="stylesheet" href="css/animate.min.css" />
+    <link rel="stylesheet" href="css/theme/sky.css" id="theme-basis" />
+    <link rel="stylesheet" href="css/theme/pw15.css" id="theme" />
 
     <!-- Code syntax highlighting -->
-    <link rel="stylesheet" href="lib/css/prism.css">
+    <link rel="stylesheet" href="lib/css/prism.css" />
 
-		<!-- If the query includes 'print-pdf', include the PDF print sheet -->
-		<script>
-    if (window.location.search.match(/print-pdf/gi)) {
-      var link = document.createElement('link')
-      link.rel = 'stylesheet'
-      link.type = 'text/css'
-      link.href = 'css/print/pdf.css'
-      document.getElementsByTagName('head')[0].appendChild(link)
-    }
-		</script>
-	</head>
+    <!-- If the query includes 'print-pdf', include the PDF print sheet -->
+    <script>
+      if (window.location.search.match(/print-pdf/gi)) {
+        var link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.type = 'text/css'
+        link.href = 'css/print/pdf.css'
+        document.getElementsByTagName('head')[0].appendChild(link)
+      }
+    </script>
+  </head>
 
-	<body id="prioFix">
+  <body id="prioFix">
+    <div class="reveal">
+      <!-- Any section element inside of this container is displayed as a slide -->
+      <div class="slides">
+        <section id="mainTitle">
+          <h1>So, what’s new in ES2025?</h1>
+          <p>
+            A presentation by
+            <a href="http://tddsworld.com/">Christophe Porteneuve</a> at
+            <a href="https://nordicjs.com/2022">Nordic.js 2022</a>
+          </p>
+        </section>
 
-		<div class="reveal">
+        <section id="whoami">
+          <h2>whoami</h2>
 
-			<!-- Any section element inside of this container is displayed as a slide -->
-			<div class="slides">
-				<section id="mainTitle">
-					<h1>So, what’s new in ES2022?</h1>
-					<p>
-						A presentation by <a href="http://tddsworld.com/">Christophe Porteneuve</a> at <a href="https://confoo.ca/en/yul2020/">Confoo Montréal 2020</a>
-					</p>
-				</section>
-
-				<section id="whoami">
-					<h2>whoami</h2>
-
-					<pre><code data-trim class="language-js">
+          <pre><code data-trim class="language-js">
 const christophe = {
-  family: { wife: 'Élodie', sons: ['Maxence', 'Elliott'] },
+  family: { wife: '👩🏻‍🦰 Élodie', sons: ['👦🏻 Maxence', '👦🏻 Elliott'] },
   city: 'Paris, FR',
   company: 'Delicious Insights',
-  trainings: ['360° ES', 'Modern Web Apps', 'Node.js', '360° Git', 'Webpack'],
+  trainings: ['360° ES', 'Modern Web Apps', 'Node.js', '360° Git'],
   webDevSince: 1995,
   mightBeKnownFor: [
     'Prototype.js',
-    'Prototype and Script.aculo.us',
+    'Prototype and Script.aculo.us (“The Bungie Book”)',
     'dotJS',
     'Paris Web',
     'NodeSchool Paris',
@@ -69,7 +72,7 @@ const christophe = {
         </section>
 
         <section id="tc39">
-          <h1>ES2022 ?!</h1>
+          <h1>ES2025?!</h1>
           <h3>ECMA, TC39, ECMAScript and JavaScript</h3>
         </section>
 
@@ -77,32 +80,46 @@ const christophe = {
           <h2>ECMA and TC39</h2>
 
           <p>
-            ECMA is an international standards body<br/>
+            ECMA is an international standards body<br />
             (like ISO, IETF, W3C or WHATWG, to name a few)
           </p>
-          <p>ES = ECMAScript.   The official standard for JavaScript*</p>
+          <p>ES = ECMAScript. The official standard for JavaScript*</p>
           <p>
-            TC39 = Technical Committee 39. Caretaker of several standards:<br/>
+            TC39 = Technical Committee 39. Caretaker of several standards:<br />
             ECMAScript (ECMA-262), <code>Intl</code> (ECMA-402), JSON (ECMA-404), etc.
           </p>
 
-          <footer>* Which happens to be, in the U.S., a trademark of Oracle Corp. Yeah, I know 🤢</footer>
+          <footer>
+            * Which happens to be, in the U.S., a trademark of Oracle Corp. Yeah, I know 🤢<br />
+            This is why the community periodically discusses renaming the language to “JS” (and also to avoid Java HR
+            confusion)
+          </footer>
         </section>
 
         <section id="tc39-process-summary">
           <h2>The way the language evolves at TC39</h2>
 
-          <p>Meetings every two months, mostly in the U.S. <strong>Yearly</strong> release in June.</p>
-          <p>“ES6” = ES2015, “ES7” = ES2016, and now we say ES2020, etc.</p>
-          <p>This is all <a href="https://github.com/tc39">transparent and public</a>.</p>
+          <p>Meetings every two months, mostly in the U.S.</p>
+          <p><strong>Yearly cycle:</strong> feature freeze in January / March, formal release in June.</p>
+          <p>“ES6” = ES2015, “ES7” = ES2016, and now we say ES2022, etc.</p>
+          <p>
+            This is all
+            <a href="https://github.com/tc39">transparent and public</a>.
+          </p>
         </section>
 
         <section id="tc39-process-stages">
-          <h2>The <a href="https://tc39.github.io/process-document/">5 stages</a> of the TC39 process</h2>
+          <h2>
+            The
+            <a href="https://tc39.github.io/process-document/">5 stages</a> of the TC39 process
+          </h2>
 
           <table class="condensed">
             <thead>
-              <tr><th>Stage</th><th>Description</th></tr>
+              <tr>
+                <th>Stage</th>
+                <th>Description</th>
+              </tr>
             </thead>
             <tbody>
               <tr>
@@ -111,7 +128,11 @@ const christophe = {
               </tr>
               <tr class="fragment">
                 <th>1 Proposal</th>
-                <td>A TC39 member becomes the proposal’s “champion.”  The general shape of the API is defined, and most of the <em>cross-cutting concerns</em> are handled.</td>
+                <td>
+                  A TC39 member becomes the proposal’s “champion.” The general shape of the API is defined, and most of
+                  the
+                  <em>cross-cutting concerns</em> are handled.
+                </td>
               </tr>
               <tr class="fragment">
                 <th>2 Draft</th>
@@ -119,191 +140,25 @@ const christophe = {
               </tr>
               <tr class="fragment">
                 <th>3 Candidate</th>
-                <td>The spec is complete, duly reviewed and approved.  The API is finalized and no stone is left unturned.</td>
+                <td>
+                  The spec is complete, duly reviewed and approved. The API is finalized and no stone is left unturned.
+                </td>
               </tr>
               <tr class="fragment">
                 <th>4 Finished</th>
                 <td>
-                  Full Test262 coverage, 2+ shipped implementations (usually v8 and Spidermonkey), significant real-world feedback, and imprimatur by the Spec Editor.  Will then be part of the next feature freeze (January-March), hence ship in the associated yearly release.</td>
+                  Full Test262 coverage, 2+ shipped implementations (usually v8 and Spidermonkey), significant
+                  real-world feedback, and imprimatur by the Spec Editor. Will then be part of the next feature freeze
+                  (January-March), hence ship in the associated yearly release.
+                </td>
               </tr>
             </tbody>
           </table>
         </section>
 
-        <section id="es2018">
-          <h1>Quick recap: ES2018</h1>
-        </section>
-
-        <section id="es2018-rest-spread-props">
-          <h2>ES2018: Rest/Spread properties</h2>
-
-          <pre><code class="language-js">
-            class OldSchoolHOC extends Component {
-              render() {
-                // Rest on properties
-                const { component: Component, <u>...props</u> } = this.props
-
-                return (
-                  // …
-                  &lt;Component {...props} />
-                )
-              }
-            }
-          </code></pre>
-
-          <pre class="fragment"><code class="language-js">
-            // Spread on properties
-            const DEFAULTS = { first: 'John', last: 'Doe' }
-            const person = { last: 'Smith', age: 42 }
-            const result = { <u>...DEFAULTS</u>, <u>...person</u>, age: 36 }
-            // => { first: 'John', last: 'Smith', age: 36 }
-          </code></pre>
-        </section>
-
-        <section id="es2018-regexp">
-          <h2>ES2018: RegExp galore</h2>
-
-          <pre><code class="language-js">
-            // Flag: “dotAll” / “singleLine”
-            '&lt;p>line 1\nline 2\nline 3&lt;/p>'.match(/&lt;p>.*&lt;\/p>/<u>s</u>) // => '&lt;p>…&lt;/p>'
-          </code></pre>
-
-          <pre class="fragment"><code class="language-js">
-            // Named captured groups
-            const ATTR = /\s+(<u>?&lt;name></u>\w+)=(<u>?&lt;quote></u>['"])(<u>?&lt;value></u>.+?)<u>\k&lt;quote></u>/
-            const { name, quote, value } = '&lt;p class="foo">&lt;/p>'.match(ATTR)<u>.groups</u>
-            // => name === 'class', quote === '"', value === 'foo'
-
-            '&lt;p class="foo">&lt;/p>'.replace(ATTR, '[<u>$&lt;name></u>=<u>$&lt;value></u>]')
-            // => '&lt;p[class=foo]>&lt;/p>'
-          </code></pre>
-
-          <pre class="fragment"><code class="language-js">
-            // Lookbehinds (here a positive one)
-            '$10.53'.match(/(<u>?&lt;=</u>\$)\d+(?:\.\d+)?/) // => ['10:53', …]
-          </code></pre>
-
-          <pre class="fragment"><code class="language-js">
-            // Unicode Property Escapes
-            'By Ζεύς!'.match(/<u>\p{Script=Greek}</u>+/<u>u</u>)[0] // => 'Ζεύς'
-          </code></pre>
-        </section>
-
-        <section id="es2018-finally">
-          <h2>ES2018: <code>Promise</code>#<code>finally</code></h2>
-
-          <p>
-            Invoked regardless of the promise chain’s outcome (fulfilled or rejected), and does not alter that state.<br/>
-            So very much like the <code>finally</code> block for a <code>try</code>.
-          </p>
-
-          <pre><code class="language-js">
-            function doSomeOldSchoolAsync() {
-              return Promise.resolve()
-                .then(setUp)
-                .then(onSuccess, onError)
-                <u>.finally(anyway)</u>
-            }
-          </code></pre>
-        </section>
-
-        <section id="es2018-async-iter">
-          <h2>ES2018: asynchronous iteration</h2>
-
-          <p>
-            A promise-based variation of the synchronous iteration from ES2015.<br/>
-            Instead of implementing <code>Symbol.iterator</code>, we implement <code>Symbol.asyncIterator</code>.
-          </p>
-          <p>Easily consumable using the new <code>for await (… of …)</code></p>
-          <p>Node (10+) and WHATWG streams (e.g. Fetch) are asynchronous iterables.</p>
-
-          <pre><code class="language-js">
-            async function echoLines(filename) {
-              const input = createReadStream(filename, 'utf-8')
-              <u>for await</u> (const line of input) {
-                console.log(`> ${line}`)
-              }
-            }
-          </code></pre>
-        </section>
-
-        <section id="es2019">
-          <h1>Quick recap: ES2019</h1>
-        </section>
-
-        <section id="es2019-optional-catch-binding">
-          <h2>ES0219: optional <code>catch</code> binding</h2>
-
-          <p>Sometimes you don’t need the error…</p>
-
-          <pre><code class="language-js">
-            function safeRequire(pathspec) {
-              try {
-                require(pathspec)
-              } <u>catch</u> {
-                debug(`Could not load optional dependency ${pathspec}`)
-              }
-            }
-          </code></pre>
-        </section>
-
-        <section id="es2019-fromentries">
-          <h2>ES2019: <code>Object.fromEntries</code></h2>
-
-          <p>The inverse of <code>Object.entries</code>: builds an object from its key/value pairs.</p>
-
-          <pre><code class="language-js">
-            function pick(src, ...propertyNames) {
-              return <u>Object.fromEntries</u>(
-                Object.entries(src).filter(([name]) => propertyNames.includes(name))
-              )
-            }
-          </code></pre>
-        </section>
-
-        <section id="es2019-trim-start-end">
-          <h2>ES2019: <code>String</code>#<code>trimStart/End</code></h2>
-
-          <p>Finer-grained variations of ES2015’s <code>trim()</code> that let us pick an extremity of the string.</p>
-
-          <pre><code class="language-js">
-            const spaceyText = '\n\t  hello world!\u00a0\n\n'
-
-            spaceyText.<u>trimStart</u>()
-            // => 'hello world!\u00a0!\n\n'
-
-            spaceyText.<u>trimEnd</u>()
-            // => '\n\t  hello world!'
-          </code></pre>
-        </section>
-
-        <section id="es2019-flat-flatmap">
-          <h2>ES2019: <code>Array</code>#<code>flat/flatMap</code></h2>
-
-          <p><code>flat(depth = 1)</code> “flattens” nested arrays up to a given depth.</p>
-
-          <pre><code class="language-js">
-            const data = ['Alice', ['Bob', 'Claire'], ['David', ['Erin', 'Fred'], 'Georges']]
-
-            data.<u>flat</u>()  // => ['Alice', 'Bob', 'Claire', 'David', ['Erin', 'Fred'], 'Georges']
-            data.<u>flat</u>(2) // => ['Alice', 'Bob', 'Claire', 'David', 'Erin', 'Fred', 'Georges']
-          </code></pre>
-
-          <div class="fragment">
-            <p><code>flatMap(mapper<i>[, thisArg]</i>)</code> runs a <code>map</code> whilst flattening the result on the fly, at depth 1.</p>
-
-            <pre><code class="language-js">
-              const data = ['Hey 😘 wassup? 😁', 'HBD 🎂 sweetheart 💖']
-              const extractEmojis = (text) => text.match(/\p{Emoji}/gu)
-
-              data.map(extractEmojis)     // => [['😘', '😁'], ['🎂', '💖']]
-              data.<u>flatMap</u>(extractEmojis) // => ['😘', '😁', '🎂', '💖']
-            </code></pre>
-          </div>
-        </section>
-
-        <section id="es2020">
-          <h1>ES2020: what’s guaranteed…</h1>
+        <section id="our-story-so-far">
+          <h1>Quick recap: ES2020–2022</h1>
+          <h2>A curated list of stuff too many people missed 😉</h2>
         </section>
 
         <section id="es2020-matchAll">
@@ -327,192 +182,331 @@ const christophe = {
             Array.from(text.<u>matchAll</u>(/(?&lt;protocol>[a-z]{3}):(?&lt;number>[\d-]+)/g)).map((mr) => mr.groups)
             // => [{ number: '0983450176', protocol: 'tel' }, { number: '478-555-1234', protocol: 'sms' }]
           </code></pre>
-          <!-- Babel 7, Cr80 / FF73 / Saf 13.1 / Edge 80 = 2/2 -->
-        </section>
-
-        <section id="es2020-dynamic-import">
-          <h2>ES2020: <code>import(…)</code></h2>
-
-          <p>
-            Dynamically imports ES Modules (“ESM”), using promises<br/>
-            (incidentally, this is the heart of Webpack’s automatic code splitting)
-          </p>
-
-          <pre><code class="language-js">
-            async function evaluate(code) {
-              const Babel = await <u>import('@babel/standalone')</u>
-
-              return Babel.transform(code, {
-                ast: true,
-                filenameRelative: 'exercice.js',
-                presets: ['stage-3'],
-              })
-            }
-
-            async function loadLocale(locale) {
-              const locale = await <u>import(`./locales/${locale}`)</u>
-              LocaleManager.registerLocale(locale, { activate: true })
-            }
-          </code></pre>
-        </section>
-
-        <section id="es2020-bigint">
-          <h2>ES2020: <code>BigInt</code></h2>
-
-          <p>“Arbitrary precision” (infinite) integers (> 2<sup>53</sup>)</p>
-
-          <pre><code class="language-js">
-            const theBiggestInt = 9007199254740991n
-
-            const alsoHuge = BigInt(9007199254740991)
-            // => 9007199254740991n
-
-            const hugeButString = BigInt('9007199254740991')
-            // => 9007199254740991n
-
-            const bigN = 2n ** 54n
-            // => 18014398509481984n
-
-            [42n === 42, 42n == 42]
-            // => [false, true]
-          </code></pre>
-          <!-- FF68, Cr77, Node 10, Edge 79 -->
         </section>
 
         <section id="es2020-allsettled">
-          <h2>ES2020: <code>Promise.allSettled</code></h2>
-
-          <p>3rd promise combinator (with <code>all</code> and <code>race</code>).  <code>any</code> is at stage 3.</p>
-
-          <p>The idea: doesn’t short-circuit, be it on the first rejection or fulfillment: we get all settlements for analysis.</p>
-
-          <pre><code class="language-js">
-            await Promise.allSettled([wait(100), wait(50), throwAfter(75)])
-            // => [
-            //   { status: 'fulfilled', value: 100 },
-            //   { status: 'fulfilled', value: 50 },
-            //   { status: 'rejected', reason: Error: 75 at… }
-            // ]
-          </code></pre>
-          <!-- Babel 7 / core-js, FF71, Cr77, Saf 13, Node 12, Edge 79 -->
-        </section>
-
-        <section id="es2020-global">
-          <h2>ES2020: <code>globalThis</code></h2>
+          <h2>ES2020 / ES2021: <code>Promise.allSettled</code>/<code>any</code></h2>
 
           <p>
-            Finally a standardization of the “global object,” regardless of the environment!<br/>
-            (web page, frame, worker, process, Node…)
+            The two final combinators; <code>any</code> short-circuits on <strong>first fulfillment</strong>.
+            <code>allSettled</code> doesn’t short-circuit, be it on the first rejection or fulfillment: we get all
+            settlements for analysis.
           </p>
 
-          <p>Depending on context, aliases to: <code>window</code>, <code>self</code>, <code>global</code> and sometimes <code>this</code> (not to mention edge cases).</p>
-
-          <!-- Babel 7, FF68, Cr77, Saf 12, Edge 79, Node 12 -->
-        </section>
-
-        <section id="optional-chaining-nullish-coalescing">
-          <h2>ES2020: Optional chaining and <em>Nullish coalescing</em> <span class="stage" title="Stade 3">3</span></h2>
-
-          <p>To make resilient yet readable property chains.</p>
+          <p>
+            With ES2015’s <code>all</code> (short-circuits on first rejection) and <code>race</code> (first settlement),
+            we now cover all use-cases.
+          </p>
 
           <pre><code class="language-js">
-            // BEFORE
-            user != null && user.names != null && user.names.first
-            user != null && user.signUp != null && user.signUp()
-            user != null && user.hobbies != null && user.hobbies[0]
+            // May the fastest successful fetch win!
+            const data = await <u>Promise.any</u>([fetchFromDB(), fetchFromHighSpeedLAN()])
 
-            // AFTER
-            user<u>?.</u>names<u>?.</u>first
-            user<u>?.</u>signup<u>?.()</u>
-            user<u>?.</u>hobbies<u>?.[0]</u>
+            // Run tests in parallel, but don't short-circuit!
+            await <u>Promise.allSettled</u>(tests)
+            // => [
+            //   { status: 'fulfilled', value: Response… },
+            //   { status: 'fulfilled', value: undefined },
+            //   { status: 'rejected', reason: Error: snapshot… }
+            // ]
           </code></pre>
-
-          <div class="fragment">
-            <p>To better handle default values.</p>
-
-            <pre><code class="language-js">
-              // 50 only if `options.duration == null`
-              const duration = options.duration <u>??</u> 50
-              const easing = options.advanced?.easing <u>??</u> 'inOutCubic'
-            </code></pre>
-          </div>
-          <!-- Babel 7, FF72 (OC) and 74 (NC), Cr80, Edge 80, Saf 13.1, Node 13/flag -->
         </section>
 
-        <section>
-          <h1>🔮 So what’s coming next? 🔮</h1>
-        </section>
+        <section id="es2022-class-fields">
+          <h2>ES2022: Class fields</h2>
 
-        <section id="numerical-separators">
-          <h2>Numeric separators <span class="stage" title="Stade 3">3</span></h2>
-
-          <p>It’s nicer when you can read it.</p>
+          <p>Static and instance field initializers + everything can be <strong>actually</strong> private</p>
 
           <pre><code class="language-js">
-            const BILLION = 1_000_000_000 // You immediately know
-            const FEE_CENTS = 20_00       // Cents / centiles
-            const RATE = 2_90             // Ditto
-            const QUADS = 0b0010_1010     // “Quads” (4 bits)
-            const TX_VALUE = 1_234_5418   // Fixed point (4), financial
-            const WORDS = 0xDEAD_C0DE     // “Words” (2 bytes)
-          </code></pre>
-          <!-- Babel 7, FF70, Cr75, Saf13, Edge 79, Node 12.5 -->
-        </section>
-
-        <section id="top-level-await">
-          <h2>Top-level <code>await</code> <span class="stage" title="Stade 3">3</span></h2>
-
-          <p>Until now, we could only <code>await</code> in an <code>async</code> function…</p>
-          <p>But this can be super-handy for module initialization, etc.</p>
-
-          <pre><code class="language-js">
-            import { engine, process } from './some-module.mjs'
-
-            // Might as well run these in parallel…
-            const engineModule = import(`./engines/${engine}.mjs`)
-            const data = fetch(url)
-
-            // And presto!
-            export const output = process((<u>await</u> engineModule).default, <u>await</u> data)
-          </code></pre>
-
-          <p>Already in Node REPL, Chromium DevTools console, Safari Web Inspector console.</p>
-
-          <!-- v8/flag, Webpack 5 experimental -->
-        </section>
-
-        <section id="class-novelties">
-          <h2>Class novelties <span class="stage" title="Stade 3">3</span></h2>
-
-          <p>Private methods (incl. accessors), static and instance fields (public / private)</p>
-
-          <pre><code class="language-js">
-            class APIClient extends Component {
+            class APIClient extends Fetcher {
               // Private instance field
               <u>#oauthToken =</u> null
               // Public static field
-              <u>static propTypes</u> = {
-                authServer: URLPropType.isRequired,
-              }
+              <u>static VERSION</u> = process.env.API_CLIENT_VERSION
               // Public instance field
               <u>state =</u> { authenticated: this.#oauthToken != null, loggedIn: false }
               // Private instance method
               <u>#shareAuthWith</u>(recipient) {
-                // Demands that `recipient` be an `APIClient`
+                // Requires that `recipient` be an `APIClient`
                 recipient.#oauthToken = this.#oauthToken
               }
             }
           </code></pre>
+        </section>
 
-          <!-- Priv: Babel, v8/7.9, JSC/review, XS, QuickJS -->
-          <!-- IC: Babel, Node 12 / v8/7.2-7.4, Fx69, Edge 79, XS, QuickJS -->
-          <!-- Stat: Babel, v8/7.9, Edge 79, JSC/review, XS, QuickJS -->
+        <section id="es2022-static-blocks">
+          <h2>ES2022: Static blocks</h2>
+
+          <p>Single-pass multi-static-field init, private static init, and more…</p>
+
+          <pre><code class="language-js">
+            class Translator {
+              static translations = { yes: 'ja', no: 'nej', maybe: 'kanske' }
+              static englishWords = []
+              static swedishWords = []
+              <u>static {</u>
+                // There! We can initialize both fields with a single operation,
+                instead of duplicating the computation.
+
+                for (const [english, swedish] of Object.entries(this.translations)) {
+                  this.englishWords.push(english)
+                  this.swedishWords.push(swedish)
+                }
+              <u>}</u>
+            }
+          </code></pre>
+
+          <footer>h/t Dr. Axel Rauschmayer (@rauschma / 2ality.net) for the example</footer>
+        </section>
+
+        <section id="es2022-iterable-at">
+          <h2>ES2022: <code>at()</code> on built-in iterables 🤩</h2>
+
+          <p>
+            You know how <code>Array</code> and <code>String</code> let you use negative indices with
+            <code>slice</code>, <code>splice</code>, etc. but can't let you use them with <code>[…]</code>? This makes
+            getting the last item particularly irritating.
+          </p>
+
+          <p>
+            Well now <strong>every built-in iterable</strong> gets a <code>.at(…)</code> method allowing negative
+            indices!
+          </p>
+
+          <pre><code class="language-js">
+            const cities = ['Stockholm', 'Göteborg', 'Malmö', 'Västerås']
+            cities<u>.at(-1)</u> // => 'Västerås'
+            cities<u>.at(-2)</u> // => 'Malmö'
+          </code></pre>
+        </section>
+
+        <section id="es2022-object-hasown">
+          <h2>ES2022: <code>Object.hasOwn()</code></h2>
+
+          <p>
+            It's long been a recommended best practice to check own-property existence with the rather long-winded code
+            below, to circumvent ill-advised implementation overrides:
+          </p>
+
+          <pre><code class="language-js">
+            const olga = { givenName: 'Olga', familyName: 'Stern', emcee: true }
+            Object.prototype.hasOwnProperty.call(olga, 'emcee') // => true 😮‍💨
+          </code></pre>
+
+          <p>We finally have a shortcut:</p>
+
+          <pre><code class="language-js">
+              <u>Object.hasOwn</u>(olga, 'emcee') // => true
+          </code></pre>
+        </section>
+
+        <section id="es2023">
+          <h1>ES2023</h1>
+          <h2>(guaranteed or likely)</h2>
+
+          <footer>
+            There is just <strong>too much stuff</strong> for me to illustrate everything in 30 minutes, especially
+            considering I want to highlight post-2023 stuff, so this is a <strong>curated</strong> list.
+          </footer>
+        </section>
+
+        <section id="es2023-find-from-last">
+          <h2>ES2023: Find from last 😙</h2>
+
+          <p>
+            <code>Array</code>’s had <code>find</code> and <code>findIndex</code> for a while now (ES2015), but what
+            about searching <strong>from the end</strong>?<br />
+            After all, we’ve long had <code>reduceRight</code> and <code>lastIndexOf</code>, right?
+          </p>
+
+          <p>
+            We used to have to either roll our own loops 😔 or get ham-handed with a prior (mutable!)
+            <code>reverse()</code>, but no longer!
+          </p>
+
+          <pre><code class="language-js">
+            const codeInTheDarkLeaderboard = [
+              { id: 'Bart', score: 91, firstTime: false },
+              { id: 'Lisa', score: 102, firstTime: true },
+              { id: 'Homer', score: 115, firstTime: true },
+              { id: 'Marge', score: 138, firstTime: false },
+            ]
+
+            const bestFirstTimer = codeInTheDarkLeaderboard.<u>findLast</u>(({ firstTime }) => firstTime)
+            // => { id: 'Homer', score: 115, firstTime: true }
+            const bestUsualIndex = codeInTheDarkLeaderboard.<u>findLastIndex</u>(({ firstTime }) => !firstTime)
+            // => 3
+          </code></pre>
+        </section>
+
+        <section id="es2023-hashbang">
+          <h2>ES2023: Hashbang grammar</h2>
+
+          <p>
+            Behold! Universal JavaScript takes another step forward, with the official allowance for hashbangs at the
+            top of source text.
+          </p>
+
+          <pre><code class="language-js">
+            <u>#! /usr/bin/env node</u>
+
+            if (detectCLIUse()) {
+              runCLI()
+            }
+
+            // Internals and exports here…
+
+            function runCLI() { … }
+          </code></pre>
+          <!-- https://github.com/tc39/proposal-hashbang#readme -->
+        </section>
+
+        <section id="es2023-temporal">
+          <h2>ES2023: Temporal 🥳 <span class="stage" title="Stage 3">3</span></h2>
+
+          <p>Aims to (beneficially) replace Moment, Luxon, date-fns, etc.</p>
+          <p>Immutable, nanosecond-precise, has all TZ, distinguishes absolute vs. local, explicit…</p>
+          <p>Great complement to <code>Intl</code> and its formatting functions.</p>
+
+          <pre><code class="language-js">
+            const meeting1 = Temporal.Date.from('2020-01-01')
+            const meeting2 = Temporal.Date.from('2020-04-01')
+            const time = Temporal.Time.from('10:00:00')
+            const timeZone = new Temporal.TimeZone('America/Montreal')
+
+            const absolute1 = timeZone.getAbsoluteFor(meeting1.withTime(time))
+            // => 2020-01-01T15:00:00.000Z
+            const absolute2 = timeZone.getAbsoluteFor(meeting2.withTime(time))
+            // => 2020-01-01T14:00:00.000Z
+          </code></pre>
+
+          <p>
+            Check out <a href="https://tc39.es/proposal-temporal/docs/">the docs</a>,
+            <a href="https://tc39.es/proposal-temporal/docs/cookbook.html">the cookbook</a>
+            and
+            <a href="https://www.dotconferences.com/2019/12/maggie-johnson-pint-making-time-make-sense"
+              >Maggie’s awesome talk at dotJS 2019</a
+            >!
+          </p>
+
+          <!-- https://tc39.es/proposal-temporal/docs/ -->
+        </section>
+
+        <section id="es2023-array-grouping">
+          <h2>ES2023: Array grouping 🎉 <span class="stage" title="Stage 3">3</span></h2>
+
+          <p>One less reason to use Lodash, eh?</p>
+
+          <pre><code class="language-js">
+            const schedule = [
+              { label: 'Registration & Coffee', time: '08:01', type: 'hallway' },
+              { label: 'Opening', time: '09:30', type: 'stage' },
+              { label: 'So, what’s new in ES2025?', time: '09:40', type: 'stage' },
+              { label: 'Evolving your Design System through Data', time: '10:15', type: 'stage' },
+              // …
+            ]
+            <u>schedule.group</u>(({ type }) => type)
+            // {
+            //   hallway: [{ label: 'Registration…' }],
+            //   stage: [{ label: 'Opening'… }, { label: 'So, what’s…'… }, { label: 'Evolving…'… }]
+            // }
+
+            <u>schedule.groupToMap</u>(({ type }) => type)
+            // => Same **as a Map** (so ANY KEY TYPE!)
+          </code></pre>
+        </section>
+
+        <section id="es2023-import-assertions">
+          <h2>ES2023: Import assertions + JSON modules <span class="stage" title="Stage 3">3</span></h2>
+
+          <p>Provides additional info on imports using inline syntax.</p>
+          <p>
+            First, long-discussed use-case is allowing extra module types with an explicit type expectation to
+            strengthen security (sort of like HTTP’s <code>X-Content-Type-Options: nosniff</code> safeguard).
+          </p>
+
+          <pre><code class="language-js">
+            // Static imports
+            import config from '../config/config.json' <u>assert { type: 'json' }</u>
+
+            // Dynamic imports
+            const { default: config } = await import('../config/config.json'<u>, { assert: { type: 'json' } }</u>)
+          </code></pre>
+
+          <p>The spec suggests related updates to Web Worker instantiation and HTML’s <code>script</code> tag.</p>
+        </section>
+
+        <section id="es2023-reg-exp-v-flag">
+          <h2>ES2023: RegExp v flag <span class="stage" title="Stage 3">3</span></h2>
+
+          <p>
+            Allows <strong>nested classes</strong> (classes are character sets), which enables
+            <strong>difference</strong> and <strong>intersection</strong> of classes. Very cool.
+          </p>
+
+          <p>Use as a replacement for the <code>u</code> (Unicode) flag when you need that capability.</p>
+
+          <pre><code class="language-js">
+            // All Unicode decimal digits, except for ASCII ones:
+            text.match(/[\p{Decimal_Number}<u>--</u>[0-9]]/g<u>v</u>)
+
+            // All Khmer letters (so both Khmer script AND letter property)
+            text.match(/[\p{Script=Khmer}<u>&&</u>\p{Letter}]/g<u>v</u>)
+          </code></pre>
+        </section>
+
+        <section id="es2023-duplicate-named-capture-groups">
+          <h2>ES2023: Duplicate named capture groups <span class="stage" title="Stage 3">3</span></h2>
+
+          <p>
+            Named capture groups (ES2018) boosted regex readability, but they erroneously forbid name re-use, even in
+            distinct parts of an alternative 😔
+          </p>
+
+          <p>
+            Still Test262-incomplete, but a reasonsably minor update, the odds are good that it'll make the next feature
+            freeze… if native engines implement it before then.
+          </p>
+
+          <pre><code class="language-js">
+            const year = dateText.match(/(<u>?&lt;year</u>>[0-9]{4})-[0-9]{2}<u>|</u>[0-9]{2}-(<u>?&lt;year></u>[0-9]{4})/)?.groups.year
+          </code></pre>
+        </section>
+
+        <section>
+          <h1>🔮 Looking farther… 🔮</h1>
+        </section>
+
+        <section id="change-array-by-copy">
+          <h2>Change array by copy <span class="stage" title="Stage 3">3</span></h2>
+
+          <p>
+            A set of extra helpers for deriving arrays. The <code>Array</code> API currently (2022) has 8 derivative
+            methods (producing a new array) vs. 9 mutative ones (altering the original array), including
+            <code>reverse()</code> and <code>sort()</code>, which most people expect not to be mutative!
+          </p>
+
+          <pre><code class="language-js">
+            const fridayMorningSpeakers = ['Colin', 'Jessy', 'Jenn', 'Charlie']
+
+            fridayMorningSpeakers<u>.toReversed</u>() // => ['Charlie', 'Jenn', 'Jessy', 'Colin']
+            fridayMorningSpeakers<u>.toSorted</u>() // => ['Charlie', 'Colin', 'Jenn', 'Jessy']
+            fridayMorningSpeakers<u>.toSpliced</u>(-2, 2) // => ['Jenn', 'Charlie']
+            fridayMorningSpeakers<u>.with</u>(-2, 'Creighton') // => ['Colin', 'Jessy', 'Creighton', 'Charlie']
+
+            fridayMorningSpeakers // => ['Colin', 'Jessy', 'Jenn', 'Charlie']
+          </code></pre>
         </section>
 
         <section id="decorators">
-          <h2>Decorators <span class="stage" title="Stade 2">2</span></h2>
+          <h2>Decorators <span class="stage" title="Stage 3">3</span></h2>
 
-          <p>So much nicer for AOP…  ES provides the plumbing and the ecosystem provides operational decorators.</p>
+          <p>
+            It's been on the table forever and is still Test262-incomplete, but is being worked on, so we'll get it
+            eventually (also, decorators are super-popular on the TypeScript side, so the demand is clear).
+          </p>
+
+          <p>So much nicer for AOP… ES provides the plumbing and the ecosystem provides operational decorators.</p>
 
           <pre><code class="language-js">
             class SuperWidget extends Component {
@@ -533,177 +527,321 @@ const christophe = {
           </code></pre>
         </section>
 
-        <section id="temporal">
-          <h2><code>Temporal</code> <span class="stage" title="Stade 2">2</span></h2>
+        <section id="shadow-realms">
+          <h2>Shadow Realms <span class="stage" title="Stage 3">3</span></h2>
 
-          <p>Aims to (beneficially) replace Moment, Luxon, data-fns, etc.</p>
-          <p>Immutable, nanosecond-precise, has all TZ, distinguishes absolute vs. local, explicit…</p>
-          <p>Great complement to <code>Intl</code> and its formatting functions.</p>
+          <p>
+            The groundwork for full control of sandboxed JS evaluation, tuning the global environment and available JS
+            built-ins.
+          </p>
+
+          <p>
+            A godsend for Web-based IDEs, DOM virtualization, test frameworks, safe end-user scripting capability,
+            server-side rendering, and more!
+          </p>
 
           <pre><code class="language-js">
-            const meeting1 = Temporal.Date.from('2020-01-01')
-            const meeting2 = Temporal.Date.from('2020-04-01')
-            const time = Temporal.Time.from('10:00:00')
-            const timeZone = new Temporal.TimeZone('America/Montreal')
+            const realm = new ShadowRealm()
 
-            const absolute1 = timeZone.getAbsoluteFor(meeting1.withTime(time))
-            // => 2020-01-01T15:00:00.000Z
-            const absolute2 = timeZone.getAbsoluteFor(meeting2.withTime(time))
-            // => 2020-01-01T14:00:00.000Z
+            const process = await realm.importValue('./utils/processor.js', 'process')
+            const processedData = process(data)
+
+            // Actual isolation!
+            globalThis.userLocation = 'Stockholm, Sverige'
+            realm.evaluate('globalThis.userLocation = "Paris, France"')
+            globalThis.userLocation // => 'Stockholm, Sverige'
           </code></pre>
 
-          <p>Check out <a href="https://www.dotconferences.com/2019/12/maggie-johnson-pint-making-time-make-sense">Maggie’s awesome talk at dotJS 2019</a>!</p>
+          <p>
+            See <a href="https://github.com/tc39/proposal-shadowrealm/blob/main/explainer.md">this explainer</a> for
+            details.
+          </p>
         </section>
 
-        <section id="functional-programming">
-          <h2>Moar functional programming <span class="stage" title="Stade 1">1</span></h2>
+        <section id="collection-stuff">
+          <h2>Tons of collection / iterator stuff <span class="stage" title="Stage 2">2</span></h2>
 
-          <p>Pipeline operator + partial application = 😍</p>
+          <p>
+            We'll always be operating on collections and iterables in general, so we might as well beef up the standard
+            library…
+          </p>
 
-          <table class="layout">
-            <tbody>
-              <tr>
-                <td width="50%">
-                  <pre><code class="language-js">
-                    // Particularly cool when we use iterators
-                    // (lazy hence efficient)!
-                    const result = numbers
-                      <u>|></u> filter(<u>?</u>, (v) => v % 2 === 0)
-                      <u>|></u> map(<u>?</u>, (v) => v + 1)
-                      <u>|></u> slice(<u>?</u>, 0, 3)
-                      <u>|></u> Array.from
-                    </code></pre>
-                  </td>
-                <td>
-                  <pre><code class="language-js">
-                    function* filter(items, predicate) {
-                      for (const item of items) {
-                        if (predicate(item)) {
-                          yield item
-                        }
-                      }
-                    }
-                  </code></pre>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+          <p>
+            <a href="https://github.com/tc39/proposal-set-methods#readme">Many new <code>Set</code> methods</a>
+            (intersection, union, difference, disjunction, sub/superset, etc.),
+            <a href="https://github.com/tc39/proposal-iterator-helpers#readme">built-in iterator helpers</a> (instead of
+            having to write stuff like <code>take</code>, <code>filter</code> or <code>map</code> as generative
+            functions), <a href="https://github.com/tc39/proposal-upsert#readme"><code>Map#emplace()</code></a>
+            for upserting in maps, and even
+            <a href="https://github.com/tc39/proposal-collection-normalization#readme">collection normalization</a> are
+            all at stage 2 and moving fast.
+          </p>
 
-          <div class="fragment">
-            <p>Pattern matching! 😍</p>
+          <pre><code class="language-js">
+            function* fibonacci() { /* … */ }
 
-            <pre><code class="language-js">
-              const getLength = (vector) => <u>case (vector) {</u>
-                <u>when { x, y, z } -></u> Math.sqrt(x ** 2 + y ** 2 + z ** 2)
-                <u>when { x, y } -></u> Math.sqrt(x ** 2 + y ** 2)
-                <u>when [...etc] -></u> vector.length
-              <u>}</u>
-            </code></pre>
+            const firstTens = new Set([1, 2, 3, 4, 5, 6, 7, 8, 9, 10])
+            const fibs = new Set(fibonacci()<u>.take</u>(10))
+            const earlyFibs = firstTens<u>.intersection</u>(fibonacci) // => Set { 1, 2, 3, 5, 8 }
+            const earlyNonFibs = firstTens<u>.difference</u>(fibonacci) // => Set { 4, 6, 7, 9, 10 }
+            const evenFibs = earlyFibs.values()<u>.filter</u>((n) => n % 2 === 0)
+
+            const headers = new Map(undefined, <u>{
+              coerceKey: (name) => name.toLowerCase()
+            }</u>)
+            headers.set('X-Requested-With', 'politeness')
+            headers // => Map { 'x-requested-with': 'politeness' }
+          </code></pre>
+        </section>
+
+        <section id="records-tuples">
+          <h2>Records &amp; Tuples <span class="stage" title="Stage 2">2</span></h2>
+
+          <p><strong>IMMUTABILITY FOR THE WIN! 💪🏻</strong></p>
+
+          <p>
+            Native deeply-immutable objects (records) and arrays (tuples). Helps bring about all the benefits of
+            immutability (e.g. referential identity), helps furthering functional JS programming.
+          </p>
+
+          <p>
+            All usual operators and APIs apply (<code>in</code>, <code>Object.keys()</code>, <code>Object.is()</code>,
+            <code>===</code>, etc.), and it plays nice with the standard library. Conversion from mutables is made easy
+            through factories. Also, <code>JSON.parseImmutable()</code>!
+          </p>
+
+          <pre><code class="language-js">
+            // Records
+            const emma1 = #{ given: 'Emma', family: 'Bostian' }
+            const emma2 = #{ given: 'Emma', family: 'Twersky' }
+            const emma3 = #{ ...emma2, family: 'Bostian' }
+
+            emma1 === emma3 // => true!
+            Object.keys(emma1) // => ['family', 'given'] -- sorted!
+
+            // Tuples
+            #[1, 2, 3] === #[1, 2, 3] // => true!
+          </code></pre>
+
+          <p>
+            <strong
+              >Try the neat <a href="https://tc39.es/proposal-record-tuple/tutorial/">tutorial</a>, the cool
+              <a
+                href="https://rickbutton.github.io/record-tuple-playground/#eyJjb250ZW50IjoiLy8gSGkgTm9yZGljLmpzIGF0dGVuZGVlISA6LURcblxuLy8gUmVjb3Jkc1xuY29uc3QgZW1tYTEgPSAjeyBnaXZlbjogJ0VtbWEnLCBmYW1pbHk6ICdCb3N0aWFuJyB9XG5jb25zdCBlbW1hMiA9ICN7IGdpdmVuOiAnRW1tYScsIGZhbWlseTogJ1R3ZXJza3knIH1cbmNvbnN0IGVtbWEzID0gI3sgLi4uZW1tYTIsIGZhbWlseTogJ0Jvc3RpYW4nIH1cblxuY29uc29sZS5sb2coZW1tYTEgPT09IGVtbWEzKVxuY29uc29sZS5sb2coT2JqZWN0LmtleXMoZW1tYTEpKVxuXG4vLyBUdXBsZXNcbmNvbnNvbGUubG9nKCNbMSwgMiwgM10gPT09ICNbMSwgMiwgM10pIiwic3ludGF4IjoiaGFzaCIsImRvbU1vZGUiOmZhbHNlfQ=="
+                >playground</a
+              >
+              and the amazing <a href="https://tc39.es/proposal-record-tuple/cookbook/">cookbook</a>!</strong
+            >
+          </p>
+        </section>
+
+        <section id="pipeline-operator">
+          <h2>Pipeline operator <span class="stage" title="Stage 2">2</span></h2>
+
+          <p>Tidies up processing chains that used to be nested function calls / interpolations / arithmetic / etc.</p>
+          <p>
+            Especially useful with unbound iterator helpers (e.g. Ramda functions). Placeholder syntax (<code>%</code>)
+            is still subject to change.
+          </p>
+
+          <div class="two-columns">
+            <div>
+              <pre><code class="language-js">
+                // BEFORE 🤮
+                console.log(
+                  chalk.dim(
+                    `$ ${Object.keys(envars)
+                      .map(envar =>
+                        `${envar}=${envars[envar]}`)
+                      .join(' ')
+                    }`,
+                    'node',
+                    args.join(' ')))
+
+                const result = Array.from(
+                  take(3,
+                    map((v) => v + 1,
+                      filter((v) => v % 2 === 0, numbers))))
+              </code></pre>
+            </div>
+            <div>
+              <pre><code class="language-js">
+                // AFTER
+                Object.keys(envars)
+                  .map(envar => `${envar}=${envars[envar]}`)
+                  .join(' ')
+                  <u>|></u> `$ ${<u>%</u>}`
+                  <u>|></u> chalk.dim(<u>%</u>, 'node', args.join(' '))
+                  <u>|></u> console.log(<u>%</u>)
+
+
+                const result = numbers
+                  <u>|></u> filter(<u>%</u>, (v) => v % 2 === 0)
+                  <u>|></u> map(<u>%</u>, (v) => v + 1)
+                  <u>|></u> take(<u>%</u>, 3)
+                  <u>|></u> Array.from
+              </code></pre>
+            </div>
           </div>
-
-          <!--
-            Pipe: Babel 7, FF58/flag
-            PA: Babel 7
-            PM: Babel 7 ongoing
-          -->
         </section>
 
-        <section id="protocols">
-          <h2>Protocols <span class="stage" title="Stade 1">1</span></h2>
+        <section id="object-pick-omit">
+          <h2><code>Object.pick()</code> / <code>omit()</code> 🤩 <span class="stage" title="Stage 1">1</span></h2>
 
-          <p>This is even better than traits, mixins or modules…  The syntax is temporarily—and intentionally—verbose.</p>
+          <p>
+            It's about time we didn't need Lodash for that. Very recent proposal (July 2022). Allows for key sets or
+            predicate callback (with optional <code>this</code> specifier).
+          </p>
 
-          <table class="layout">
-            <tbody>
-              <tr>
-                <td>
-                  <pre><code class="language-js">
-                    <u>protocol</u> Foldable {
-                      foldr // “Required field” (symbol)
+          <pre><code class="language-js">
+            const conference = { name: 'Nordic.js', year: 2022, city: 'Stockholm', speakers: 21 }
+            <u>Object.pick</u>(conference, ['name', 'year'])
+            // => { name: 'Nordic.js', year: 2022 }
 
-                      // “Provided field” (here an accessor)
-                      get length() { return this[<u>Foldable.foldr</u>]((m) => m + 1, 0) }
-                      …
-                      // On-the-fly implementation for existing host types!
-                      <u>implemented by</u> Array {
-                        foldr(f, acc) { … }
-                      }
-                    }
-                  </code></pre>
+            <u>Object.pick</u>(conference, (value) => typeof value === 'number')
+            // => { year: 2022, speakers: 21 }
 
-                  <pre><code class="language-js">
-                    // Later implementation
-                    Set.prototype[Foldable.foldr] = (f, acc) => { … }
-                    Protocol.implement(Set, Foldable)
-                  </code></pre>
-                </td>
-                <td>
-                  <pre><code class="language-js">
-                    class NEList {
-                      …
-                      // Implementation for the current class
-                      implements protocol Foldable {
-                        foldr(f, acc) { … }
-                      }
-                    }
-                  </code></pre>
+            <u>Object.omit</u>(conference, (value) => typeof value === 'number')
+            // => { name: 'Nordic.js', city: 'Stockholm' }
+          </code></pre>
 
-                  <pre><code class="language-js">
-                    // Inheriting (extending) protocols
-                    protocol Mappable extends Foldable { map }
-                    class Collection {
-                      implements protocol Mappable {
-                        foldr(f, acc) { … }
-                        map(f) { … }
-                      }
-                    }
-                  </code></pre>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-          <!-- NO support anywhere for now -->
+          <p>It <em>might</em> get even further, with syntatic sugar for key lists in picking:</p>
+
+          <pre><code class="language-js">
+            conference<u>.{name, year}</u> // => { name: 'Nordic.js', year: 2022 }
+
+            const keys = ['name', 'city']
+            conference<u>.[...keys]</u>
+            // => { name: 'Nordic.js', city: 'Stockholm' }
+          </code></pre>
+        </section>
+
+        <section id="extended-regexps">
+          <h2>Extended-mode regular expressions 🎉 <span class="stage" title="Stage 1">1</span></h2>
+
+          <p>
+            After Perl, .NET, Ruby… JS finally gets an extended-mode regex syntax. Allows for non-significant whitespace
+            (including line breaks within <code>RegExp</code> constructor arguments) and comments (inline or line).
+            Readability FTW!
+          </p>
+
+          <pre><code class="language-js">
+            const TAG_REGEX = new RegExp(String.raw`
+              <
+              <u># Tag name</u>
+              (?&lt;tag>[\w-]+)
+              \s+
+              <u># Attributes</u>
+              (?&lt;attrs>.+?)
+              >
+              <u># Contents</u>
+              (?&lt;content>.+?)
+              <u># Closing tag</u>
+              &lt;/\k&lt;tag>>
+            `, <u>'x'</u>)
+          </code></pre>
+
+          <footer>
+            This was last presented a year ago (Oct 21). You can also use inline comments in regular expression
+            literals. It would be lovely to get regular expression syntax coloration in constructor arguments using a
+            VSCode extension and custom tagged template literal. 😉
+          </footer>
+        </section>
+
+        <section id="policy-maps-sets">
+          <h2>Policy maps and sets 😎 <span class="stage" title="Stage 1">1</span></h2>
+
+          <p>
+            These collections are often used with a need for <strong>capped capacity</strong>. This implies an
+            <strong>eviction strategy</strong>: LIFO, FIFO, MRU, LRU… This is all usually implemented by hand through
+            wrapper functions. How about having it built-in?
+          </p>
+
+          <p>
+            We may get
+            {<code>FIFO</code>,<code>LIFO</code>,<code>MRU</code>,<code>LRU</code>}{<code>Map</code>,<code>Set</code>}
+            if this proposal makes it through!
+          </p>
+
+          <footer>
+            (Again, a July 2022 proposal, but this is not super heavy and should get there before 2025 😉)
+          </footer>
+        </section>
+
+        <section id="pattern-matching">
+          <h2>Pattern matching 🤯 <span class="stage" title="Stage 1">1</span></h2>
+
+          <p>
+            <code>match </code> expression, which provides sort of structure-based switching. Similar features in Rust,
+            Python, F#, Elixir/Erlang… Just <strong>skimming the surface</strong> of what is envisioned here:
+          </p>
+
+          <pre><code class="language-js">
+            <u>match (res) {</u>
+              <u>when ({ status: 200, body, ...rest }):</u> handleData(body, rest)
+              <u>when ({ status, destination: url }) if (300 &lt;= status && status &lt; 400):</u>
+                handleRedirect(url)
+              <u>when ({ status: 500 }) if (!this.hasRetried):</u> do {
+                retry(req)
+                this.hasRetried = true
+              }
+              <u>default:</u> throwSomething()
+            <u>}</u>
+
+            const commandRsult = <u>match (command) {</u>
+              <u>when ([ 'go', dir and ('north' or 'east' or 'south' or 'west')]):</u> go(dir);
+              <u>when ([ 'take', item and /[a-z]+ ball/ and { weight }]):</u> take(item);
+              <u>default:</u> lookAround()
+            }
+          </code></pre>
+
+          <footer>Last presented March 2022 (as of October 2022).</footer>
         </section>
 
         <section id="screencasts">
-          <h2>Do you like screencasts?</h2>
+          <h2>Do you like cool video courses?</h2>
 
           <p>We publish about one new video course every month, mostly around Git and JS.</p>
 
-          <br>
-          <h3><a href="https://screencasts.delicious-insights.com/">screencasts.delicious-insights.com</a></h3>
-          <br>
+          <br />
+          <h4>
+            <code
+              ><a href="https://screencasts.delicious-insights.com/?coupon=NORDICJS"
+                >screencasts.delicious-insights.com/?coupon=NORDICJS</a
+              ></code
+            >
+          </h4>
+          <p>(50% off on all courses for you folks!)</p>
 
           <p>Or if that’s easier for you:</p>
 
-          <br>
+          <br />
 
-          <h3><a href="https://bit.ly/screencasts-confoo">bit.ly/screencasts-confoo</a></h3>
+          <h3>
+            <a href="https://bit.ly/screencasts-nordicjs">bit.ly/screencasts-nordicjs</a>
+          </h3>
         </section>
 
         <section id="thank-you">
-          <h1>Thank you!</h1>
-          <h3>Always bet on JS.</h3>
-          <br>
+          <h1>Tack!</h1>
+          <h3>Satsa alltid på JS.</h3>
+          <br />
           <p>Christophe Porteneuve</p>
           <p><a href="https://twitter.com/porteneuve">@porteneuve</a></p>
 
           <p class="breathing">
-            Slides are at <a href="https://bit.ly/confoo-es2022">bit.ly/confoo-es2022</a><br/>
+            Slides are at
+            <a href="https://bit.ly/nordicjs-es2025">bit.ly/nordicjs-es2025</a><br />
           </p>
-
-          <footer>h/t to Nicholas C. Zakas’ wonderful <a href="https://leanpub.com/understandinges6/">Understanding ES6</a> and Axel Rauschmayer’s excellent <a href="https://exploringjs.com/es6/">Exploring ES6</a>,<br/>
-            which both have great chapters on ES proxies, and provided the basis for several examples I used.</footer>
         </section>
+      </div>
+    </div>
 
-			</div>
-		</div>
-
-		<script src="lib/js/head.min.js"></script>
+    <script src="lib/js/head.min.js"></script>
     <script src="plugin/highlight/prism.js"></script>
-		<script src="js/reveal.js"></script>
+    <script src="js/reveal.js"></script>
 
-		<script>
+    <script>
       // Full list of configuration options available here: // https://github.com/hakimel/reveal.js#configuration
       /* global Reveal */
       Reveal.initialize({
@@ -724,14 +862,40 @@ const christophe = {
 
         // Optional libraries used to extend on reveal.js
         dependencies: [
-          { src: 'lib/js/classList.js', condition: function () { return !document.body.classList } },
-          { src: 'plugin/markdown/marked.js', condition: function () { return !!document.querySelector('[data-markdown]') } },
-          { src: 'plugin/markdown/markdown.js', condition: function () { return !!document.querySelector('[data-markdown]') } },
-          { src: 'plugin/zoom-js/zoom.js', async: true, condition: function () { return !!document.body.classList } },
-          { src: 'plugin/notes/notes.js', async: true, condition: function () { return !!document.body.classList } }
-        ]
+          {
+            src: 'lib/js/classList.js',
+            condition: function () {
+              return !document.body.classList
+            },
+          },
+          {
+            src: 'plugin/markdown/marked.js',
+            condition: function () {
+              return !!document.querySelector('[data-markdown]')
+            },
+          },
+          {
+            src: 'plugin/markdown/markdown.js',
+            condition: function () {
+              return !!document.querySelector('[data-markdown]')
+            },
+          },
+          {
+            src: 'plugin/zoom-js/zoom.js',
+            async: true,
+            condition: function () {
+              return !!document.body.classList
+            },
+          },
+          {
+            src: 'plugin/notes/notes.js',
+            async: true,
+            condition: function () {
+              return !!document.body.classList
+            },
+          },
+        ],
       })
-		</script>
-
-	</body>
+    </script>
+  </body>
 </html>

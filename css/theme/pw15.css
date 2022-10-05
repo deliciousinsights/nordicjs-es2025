@@ -29,6 +29,10 @@
   line-height: 1em;
 }
 
+.reveal section > h1 {
+  font-size: 3em;
+}
+
 .reveal tt,
 .reveal code,
 .reveal pre {
