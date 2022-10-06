@@ -48,6 +48,7 @@
             <a href="http://tddsworld.com/">Christophe Porteneuve</a> at
             <a href="https://nordicjs.com/2022">Nordic.js 2022</a>
           </p>
+          <p><a href="https://twitter.com/intent/user?screen_name=porteneuve">@porteneuve</a></p>
         </section>
 
         <section id="whoami">
@@ -154,6 +155,21 @@ const christophe = {
               </tr>
             </tbody>
           </table>
+        </section>
+
+        <section id="disclaimer">
+          <h2>A disclaimer</h2>
+          <p>This is a 30-minute talk.</p>
+          <p>
+            There are currently
+            <a href="https://github.com/tc39/proposals/blob/main/finished-proposals.md">2 finished</a> ES2023
+            proposals,<br />
+            <a href="https://github.com/tc39/proposals#stage-3">15 stage-3</a> proposals,
+            <a href="https://github.com/tc39/proposals#stage-2">23 stage-2</a> proposals, and tons of stage-1.
+          </p>
+          <p>Many of these have a lot more about them than I can illustrate in slides in under a minute…</p>
+          <h4>This is a curated list 🤗</h4>
+          <p>Check out <a href="https://github.com/tc39/proposals">the proposals repo</a> for full details 😉</p>
         </section>
 
         <section id="our-story-so-far">
@@ -303,11 +319,6 @@ const christophe = {
         <section id="es2023">
           <h1>ES2023</h1>
           <h2>(guaranteed or likely)</h2>
-
-          <footer>
-            There is just <strong>too much stuff</strong> for me to illustrate everything in 30 minutes, especially
-            considering I want to highlight post-2023 stuff, so this is a <strong>curated</strong> list.
-          </footer>
         </section>
 
         <section id="es2023-find-from-last">
@@ -474,7 +485,7 @@ const christophe = {
         </section>
 
         <section>
-          <h1>🔮 Looking farther… 🔮</h1>
+          <h1>🔮 Looking beyond… 🔮</h1>
         </section>
 
         <section id="change-array-by-copy">
@@ -612,15 +623,15 @@ const christophe = {
 
           <pre><code class="language-js">
             // Records
-            const emma1 = #{ given: 'Emma', family: 'Bostian' }
-            const emma2 = #{ given: 'Emma', family: 'Twersky' }
-            const emma3 = #{ ...emma2, family: 'Bostian' }
+            const emma1 = <u>#{</u> given: 'Emma', family: 'Bostian' }
+            const emma2 = <u>#{</u> given: 'Emma', family: 'Twersky' }
+            const emma3 = <u>#{</u> ...emma2, family: 'Bostian' }
 
             emma1 === emma3 // => true!
             Object.keys(emma1) // => ['family', 'given'] -- sorted!
 
             // Tuples
-            #[1, 2, 3] === #[1, 2, 3] // => true!
+            <u>#[</u>1, 2, 3] === <u>#[</u>1, 2, 3] // => true!
           </code></pre>
 
           <p>
@@ -788,7 +799,7 @@ const christophe = {
               <u>default:</u> throwSomething()
             <u>}</u>
 
-            const commandRsult = <u>match (command) {</u>
+            const commandResult = <u>match (command) {</u>
               <u>when ([ 'go', dir and ('north' or 'east' or 'south' or 'west')]):</u> go(dir);
               <u>when ([ 'take', item and /[a-z]+ ball/ and { weight }]):</u> take(item);
               <u>default:</u> lookAround()
@@ -799,27 +810,17 @@ const christophe = {
         </section>
 
         <section id="screencasts">
-          <h2>Do you like cool video courses?</h2>
-
-          <p>We publish about one new video course every month, mostly around Git and JS.</p>
+          <h2>Do you like amazing courses?</h2>
 
           <br />
+          <h4><a href="https://delicious-insights.com/en/trainings/">Check out our trainings!</a></h4>
+
+          <br />
+          <p>Also short video courses:</p>
           <h4>
-            <code
-              ><a href="https://screencasts.delicious-insights.com/?coupon=NORDICJS"
-                >screencasts.delicious-insights.com/?coupon=NORDICJS</a
-              ></code
-            >
-          </h4>
-          <p>(50% off on all courses for you folks!)</p>
-
-          <p>Or if that’s easier for you:</p>
-
-          <br />
-
-          <h3>
             <code><a href="https://bit.ly/screencasts-nordicjs">bit.ly/screencasts-nordicjs</a></code>
-          </h3>
+          </h4>
+          <p>(50% off on all video courses for you folks!)</p>
         </section>
 
         <section id="thank-you">
